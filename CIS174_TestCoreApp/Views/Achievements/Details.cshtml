@@ -1,0 +1,36 @@
+﻿@model CIS174_TestCoreApp.Models.Achievements
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Achievements</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FamousPeopleId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FamousPeopleId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.doa)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.doa)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.AchievementsId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

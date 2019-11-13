@@ -1,0 +1,55 @@
+﻿@model CIS174_TestCoreApp.Models.CreatePersonViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+<h2>Create Person</h2>
+<h3>Non-production environment</h3>
+
+<form asp-controller="Person" asp-action="Index" method="post">
+    <div>
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName">
+        <span asp-validation-for="FirstName"></span>
+
+    </div>
+    <div>
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName">
+        <span asp-validation-for="LastName"></span>
+    </div>
+    <div>
+        <label asp-for="Age"></label>
+        <input asp-for="Age">
+        <span asp-validation-for="Age"></span>
+    </div>
+    <div>
+        <label asp-for="DateOfBirth"></label>
+        <input asp-for="DateOfBirth">
+        <span asp-validation-for="DateOfBirth"></span>
+    </div>
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email">
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div>
+        <label asp-for="Password"></label>
+        <input asp-for="Password">
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div>
+        <label asp-for="ConfirmPassword"></label>
+        <input asp-for="ConfirmPassword">
+        <span asp-validation-for="ConfirmPassword"></span>
+    </div>
+    <div>
+        <select asp-for="Country" asp-items="CreatePersonViewModel.Countries"></select>
+        <span asp-validation-for="Country"></span>
+    </div>
+    <div>
+        <button class="btn btn-primary" type="submit">Create</button>
+
+    </div>
+</form>
+
+
