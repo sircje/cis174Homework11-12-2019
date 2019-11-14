@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CIS174_TestCoreApp.Entities;
+using CIS174_TestCoreApp.Requirements;
 using CIS174_TestCoreApp.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,6 +32,19 @@ namespace CIS174_TestCoreApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy(
+                "IsAdmin",
+                policyBuilder => policyBuilder
+                .RequireClaim("Admin"));
+
+                options.AddPolicy(
+                "Assignment12",
+                 policyBuilder => policyBuilder.AddRequirements(
+                 new MinimumAgeRequirement(18)
+                 )) ;
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
                 .AddRazorPagesOptions(options =>

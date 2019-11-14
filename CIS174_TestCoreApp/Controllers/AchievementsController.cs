@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CIS174_TestCoreApp;
 using CIS174_TestCoreApp.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CIS174_TestCoreApp.Controllers
 {
@@ -66,8 +67,10 @@ namespace CIS174_TestCoreApp.Controllers
         }
 
         // GET: Achievements/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
+
             if (id == null)
             {
                 return NotFound();
@@ -78,7 +81,7 @@ namespace CIS174_TestCoreApp.Controllers
             {
                 return NotFound();
             }
-            return View(achievements);
+                return View(achievements);
         }
 
         // POST: Achievements/Edit/5

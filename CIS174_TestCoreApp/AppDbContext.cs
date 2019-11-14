@@ -17,6 +17,7 @@ namespace CIS174_TestCoreApp
         public DbSet<FamousPeople> FamousPeoples { get; set; }
         public DbSet<CIS174_TestCoreApp.Models.Achievements> Achievements { get; set; }
         public DbSet<ErrorLogTable> ErrorLog { get; set; }
+        public DbSet<CIS174_TestCoreApp.Models.FamousPeopleViewModel> FamousPeopleViewModel { get; set; }
 
     }
    

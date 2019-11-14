@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CIS174_TestCoreApp.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CIS174_TestCoreApp.Controllers
 {
@@ -25,6 +26,13 @@ namespace CIS174_TestCoreApp.Controllers
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
+
+            return View();
+        }
+        [Authorize("IsAdmin")]
+        public IActionResult Admin()
+        {
+            ViewData["Message"] = "Your admin page.";
 
             return View();
         }
